@@ -1,0 +1,143 @@
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
+
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><html>
+<head>
+  <title>*** Advokátní kancelář Fráňa a partneři ***</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<frameset cols="20%,80%">
+  <frame src="#nav">
+  <frame src="#main">
+</frameset>
+
+<body bgcolor="#00FFFF" text="#FF00FF" link="#0000FF" vlink="#800080" alink="#FF0000">
+  <table width="800" align="center" border="5" bgcolor="#FFFF00" cellpadding="10" cellspacing="0">
+    <tr>
+      <td align="center" bgcolor="#000080">
+        <font face="Comic Sans MS" size="6" color="#FFFFFF">
+          <b>*** VÍTEJTE U ADVOKÁTNÍ KANCELÁŘE FRÁŇA A PARTNEŘI ***</b>
+        </font>
+        <p><img src="https://via.placeholder.com/150x50?text=Retro+Logo" alt="Retro Logo"></p>
+        <marquee><font color="#FF0000">Založeno 1990 - Vaše právní jistota!</font></marquee>
+      </td>
+    </tr>
+    <tr>
+      <td bgcolor="#FF00FF">
+        <font face="Arial" size="4" color="#000000">
+          <b>NAVIGACE</b><br>
+          <a href="#o-nas">O nás</a><br>
+          <a href="#sluzby">Služby</a><br>
+          <a href="#kontakt">Kontakt</a><br>
+          <a href="http://www.cak.cz">Česká advokátní komora</a><br>
+          <a href="mailto:recepce@akfrana.cz">E-mail</a>
+        </font>
+      </td>
+    </tr>
+  </table>
+
+  <table width="800" align="center" border="3" bgcolor="#FFFFFF" cellpadding="10" cellspacing="5">
+    <tr>
+      <td>
+        <font face="Times New Roman" size="5" color="#000080">
+          <a name="o-nas"><h2>O NÁS</h2></a>
+        </font>
+        <font face="Arial" size="3" color="#000000">
+          <p>Vítejte na stránkách Advokátní kanceláře Fráňa a partneři! Jsme nástupci kanceláře Hartmann, Jelínek, Fráňa a partneři, působící od roku 1990. Nabízíme <blink>PROFESIONÁLNÍ</blink> právní služby s osobním přístupem!</p>
+          <p>Náš tým tvoří zkušení právníci připraveni řešit Vaše právní záležitosti.</p>
+        </font>
+
+        <font face="Times New Roman" size="5" color="#000080">
+          <a name="sluzby"><h2>SLUŽBY</h2></a>
+        </font>
+        <font face="Arial" size="3" color="#000000">
+          <p>Specializujeme se na:</p>
+          <ul>
+            <li><b>Občanské právo</b></li>
+            <li><b>Obchodní právo</b></li>
+            <li><b>Pracovní právo</b></li>
+            <li><b>Trestní právo</b></li>
+            <li><b>Rodinné právo</b></li>
+            <li><b>Správní právo</b></li>
+          </ul>
+        </font>
+
+        <font face="Times New Roman" size="5" color="#000080">
+          <a name="kontakt"><h2>KONTAKT</h2></a>
+        </font>
+        <font face="Arial" size="3" color="#000000">
+          <p><b>Adresa:</b> Malé náměstí 124, 500 03 Hradec Králové</p>
+          <p><b>Telefon:</b> +420 495 534 081</p>
+          <p><b>E e-mail:</b> <a href="mailto:recepce@akfrana.cz">recepce@akfrana.cz</a></p>
+          <p><b>Tým:</b></p>
+          <ul>
+            <li>JUDr. Pavel Fráňa, Ph.D. - <a href="mailto:frana@akfrana.cz">frana@akfrana.cz</a></li>
+            <li>JUDr. Jiří Janeba - <a href="mailto:janeba@akfrana.cz">janeba@akfrana.cz</a></li>
+            <li>Mgr. Veronika Kaiserová - <a href="mailto:kaiserova@akfrana.cz">kaiserova@akfrana.cz</a></li>
+            <li>Mgr. Martin Koudele - <a href="mailto:koudele@akfrana.cz">koudele@akfrana.cz</a></li>
+            <li>JUDr. Ondřej Moravec, Ph.D. - <a href="mailto:moravec@akfrana.cz">moravec@akfrana.cz</a></li>
+            <li>Mgr. Lukáš Smutný - <a href="mailto:smutny@akfrana.cz">smutny@akfrana.cz</a></li>
+            <li>Mgr. Michal Špaček - <a href="mailto:spacek@akfrana.cz">spacek@akfrana.cz</a></li>
+            <li>Mgr. Filip Černý - <a href="mailto:cerny@akfrana.cz">cerny@akfrana.cz</a></li>
+            <li>JUDr. Jiří Dobýval - <a href="mailto:dobyval@akfrana.cz">dobyval@akfrana.cz</a></li>
+            <li>JUDr. Renata Dobývalová - <a href="mailto:dobyvalova@akfrana.cz">dobyvalova@akfrana.cz</a></li>
+            <li>Mgr. et Mgr. Petra Petrů - <a href="mailto:petru@akfrana.cz">petru@akfrana.cz</a></li>
+            <li>JUDr. Petra Sedláčková - <a href="mailto:sedlackova@akfrana.cz">sedlackova@akfrana.cz</a></li>
+            <li>Mgr. Michaela Čejchanová - <a href="mailto:cejchanova@akfrana.cz">cejchanova@akfrana.cz</a></li>
+            <li>Mgr. Matylda Folberger - <a href="mailto:folberger@akfrana.cz">folberger@akfrana.cz</a></li>
+            <li>Mgr. Jan Gebauer - <a href="mailto:gebauer@akfrana.cz">gebauer@akfrana.cz</a></li>
+            <li>Mgr. Viktor Gilar - <a href="mailto:gilar@akfrana.cz">gilar@akfrana.cz</a></li>
+            <li>Mgr. Ondřej Hájek - <a href="mailto:hajek@akfrana.cz">hajek@akfrana.cz</a></li>
+            <li>Mgr. Jiří Janáček - <a href="mailto:janacek@akfrana.cz">janacek@akfrana.cz</a></li>
+            <li>Mgr. Matěj Kučera - <a href="mailto:kucera@akfrana.cz">kucera@akfrana.cz</a></li>
+          </ul>
+        </font>
+      </td>
+    </tr>
+    <tr>
+      <td align="center" bgcolor="#00FF00">
+        <font face="Comic Sans MS" size="2" color="#000000">
+          <p>© 2025 Advokátní kancelář Fráňa a partneři<br>
+          <img src="https://via.placeholder.com/50x50?text=GIF" alt="Spinning GIF"></p>
+        </font>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
