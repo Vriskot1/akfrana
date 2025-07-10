@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <title>FRÁŇA a PARTNEŘI - Advokátní Kancelář - Retro Web</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    body {
+      /* Inspirace akfrana.cz - jemný šum a tmavé pozadí */
+      background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat, #1a1a1a; /* Jemný šum + tmavě šedé pozadí */
+      color: #00ffcc; /* Jasně zelená, jako na starých monitorech */
+      font-family: 'Press Start 2P', monospace;
+      padding: 20px;
+      margin: 0; /* Odstranění výchozích okrajů */
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Centrování obsahu */
+      min-height: 100vh; /* Zajistí, že obsah bude alespoň výšky okna */
+      box-sizing: border-box; /* Zahrnuje padding do šířky/výšky */
+    }
+    h1, h2 {
+      text-align: center;
+      animation: glow 1s infinite alternate;
+      color: #00ffff; /* Tyrkysová pro nadpisy */
+      text-shadow: 0 0 10px #00ffff; /* Silnější záře */
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff; }
+      to { text-shadow: 0 0 15px #00ffff, 0 0 25px #00ffff; }
+    }
+    marquee {
+      font-size: 24px; /* Větší velikost pro marquee */
+      color: #ff66cc; /* Růžová */
+      margin-bottom: 30px; /* Více prostoru */
+      border: 2px solid #ff00ff; /* Neonový rámeček */
+      padding: 5px 0;
+      width: 100%; /* Plná šířka */
+      box-sizing: border-box;
+    }
+    .content-box {
+      border: 3px double #ff66cc;
+      padding: 15px; /* Větší padding */
+      margin: 20px auto;
+      max-width: 700px; /* Trochu širší */
+      background: rgba(0,0,0,0.85); /* Tmavší pozadí pro boxy */
+      box-shadow: 0 0 15px rgba(255,102,204,0.5); /* Jemná záře kolem boxů */
+      text-align: justify; /* Zarovnání textu do bloku */
+    }
+    .content-box p, .content-box ul, .content-box address {
+      margin-bottom: 10px;
+    }
+    ul {
+      list-style-type: '⚡ '; /* Retro odrážky */
+      padding-left: 20px;
+    }
+    a {
+      color: #ffff00; /* Žlutá pro odkazy */
+      text-decoration: none;
+      border-bottom: 1px dotted #ffff00; /* Důraz na odkazy */
+    }
+    a:hover {
+      color: #ff00ff; /* Změna barvy při najetí */
+      border-bottom: 1px solid #ff00ff;
+    }
+    img.gif {
+      width: 60px; /* Větší GIFy */
+      height: auto;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    .blinking-text {
+      animation: blink-animation 1s steps(1, start) infinite;
+      color: #ff00ff; /* Růžová pro blikající text */
+      font-weight: bold;
+    }
+    @keyframes blink-animation {
+      to { visibility: hidden; }
+    }
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #aaaaaa;
+      border-top: 1px dashed #666;
+      padding-top: 15px;
+      width: 100%;
+      max-width: 700px;
+      box-sizing: border-box;
+    }
+    .footer img.gif {
+      width: 40px;
+      margin: 0 5px;
+    }
+    .location-details {
+      margin-top: 15px;
+      border-top: 1px dashed #666;
+      padding-top: 10px;
+    }
+    .location-details h3 {
+      text-align: center;
+      color: #00ffff;
+      margin-bottom: 10px;
+    }
+    .location-details p {
+      margin-bottom: 5px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <marquee behavior="alternate" scrollamount="5">VÍTEJTE NA STRÁNKÁCH ADVOKÁTNÍ KANCELÁŘE FRÁŇA A PARTNEŘI ✨ KONEČNĚ JSTE NÁS NAŠLI! ✨</marquee>
+
+  <h1>FRÁŇA a PARTNEŘI</h1>
+  <div class="content-box">
+    <h2><img class="gif" src="https://www.animatedimages.org/data/media/18/animated-info-image-0004.gif" alt="info"> O nás <img class="gif" src="https://www.animatedimages.org/data/media/18/animated-info-image-0004.gif" alt="info"></h2>
+    <p>Jsme tradiční <span class="blinking-text">advokátní kancelář</span> nabízející právní služby s duší internetu roku <span class="blinking-text">1999</span>! Naše webové stránky jsou autentickým návratem do zlaté éry online komunikace, plné blikajících textů a animovaných GIFů.</p>
+    <p>Jsme hrdí na naši historii a současně se díváme do budoucna, vždy s důrazem na potřeby našich klientů.</p>
+    <img class="gif" src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" alt="greeting"> Jsme tu pro vás!
+  </div>
+
+  <div class="content-box">
+    <h2><img class="gif" src="https://www.animatedimages.org/data/media/93/animated-scales-of-justice-image-0004.gif" alt="scales"> Právní služby <img class="gif" src="https://www.animatedimages.org/data/media/93/animated-scales-of-justice-image-0004.gif" alt="scales"></h2>
+    <ul>
+      <li>🏛 Zastupování u soudu - s plnou parou vpřed!</li>
+      <li>📜 Sepisování smluv - rychle a bezpečně.</li>
+      <li>🧾 Právní analýzy - pronikáme do jádra problému.</li>
+      <li>📞 Právní poradenství online i osobně - jsme vždy na drátě!</li>
+    </ul>
+    <p style="text-align: center;">Potřebujete právní radu? <a href="#contact-us">Klikněte zde!</a> <img class="gif" src="https://www.animatedimages.org/data/media/64/animated-arrow-image-0062.gif" alt="arrow"></p>
+  </div>
+
+  <div class="content-box" id="contact-us">
+    <h2><img class="gif" src="https://www.animatedimages.org/data/media/71/animated-phone-image-0044.gif" alt="phone"> Kontaktujte nás <img class="gif" src="https://www.animatedimages.org/data/media/71/animated-phone-image-0044.gif" alt="phone"></h2>
+    <p style="text-align: center;">Kontaktujte nás na jedné z našich poboček. Jsme tu pro Vás!</p>
+
+    <div class="location-details">
+      <h3><img class="gif" src="https://www.animatedimages.org/data/media/132/animated-map-image-0013.gif" alt="map"> Praha <img class="gif" src="https://www.animatedimages.org/data/media/132/animated-map-image-0013.gif" alt="map"></h3>
+      <p>📍 Václavské náměstí 832/19, 110 00 Praha 1</p>
+      <p>☎ Tel: <a href="tel:+420296325355">+420 296 325 355</a></p>
+      <p>📧 Email: <a href="mailto:recepce@akfrana.cz">recepce@akfrana.cz</a>, <a href="mailto:media@akfrana.cz">media@akfrana.cz</a></p>
+      <p>IČ: 22259091, DIČ: CZ22259091</p>
+    </div>
+
+    <div class="location-details">
+      <h3><img class="gif" src="https://www.animatedimages.org/data/media/132/animated-map-image-0013.gif" alt="map"> Hradec Králové <img class="gif" src="https://www.animatedimages.org/data/media/132/animated-map-image-0013.gif" alt="map"></h3>
+      <p>📍 Malé náměstí 124, 500 03 Hradec Králové</p>
+      <p>☎ Tel: <a href="tel:+420495534081">+420 495 534 081</a></p>
+      <p>📧 Email: <a href="mailto:recepce@akfrana.cz">recepce@akfrana.cz</a></p>
+    </div>
+
+    <div class="location-details">
+      <h3><img class="gif" src="https://www.animatedimages.org/data/media/132/animated-map-image-0013.gif" alt="map"> Náchod <img class="gif" src="https://www.animatedimages.org/data/media/132/animated-map-image-0013.gif" alt="map"></h3>
+      <p>📍 Masarykovo náměstí 69, 547 01 Náchod</p>
+      <p>☎ Tel: <a href="tel:+420491427148">+420 491 427 148</a></p>
+      <p>📧 Email: <a href="mailto:recepcenachod@akfrana.cz">recepcenachod@akfrana.cz</a></p>
+    </div>
+
+    <p style="text-align: center; margin-top: 20px;"><a href="mailto:info@akfrana.cz">Pošlete nám e-mail!</a></p>
+  </div>
+
+  <div class="content-box" style="text-align:center">
+    <p>
+      <img class="gif" src="https://www.animatedimages.org/data/media/71/animated-under-construction-image-0011.gif" alt="under construction">
+    </p>
+    <p><span class="blinking-text">Stránky stále v rekonstrukci – jako v roce 1998!</span> Děkujeme za trpělivost!</p>
+    <p><img class="gif" src="https://www.animatedimages.org/data/media/316/animated-web-design-image-0005.gif" alt="web design"></p>
+  </div>
+
+  <div class="footer">
+    <p>Tento web byl optimalizován pro prohlížeče Netscape Navigator 4.0 a Internet Explorer 4.0.</p>
+    <p>Nejlépe se zobrazuje v rozlišení 800x600 px. <img class="gif" src="https://www.animatedimages.org/data/media/200/animated-computer-image-0021.gif" alt="old computer"></p>
+    <p>Počet návštěvníků od 1. ledna 1999: <img class="gif" src="https://www.animatedimages.org/data/media/243/animated-counter-image-0003.gif" alt="counter"> 000001 <img class="gif" src="https://www.animatedimages.org/data/media/243/animated-counter-image-0003.gif" alt="counter"></p>
+    <p>&copy; 1999 - <span id="current-year"></span> FRÁŇA a PARTNEŘI. Všechna práva vyhrazena. <img class="gif" src="https://www.animatedimages.org/data/media/121/animated-copyright-image-0008.gif" alt="copyright"></p>
+  </div>
+
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
